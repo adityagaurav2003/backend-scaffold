@@ -1,8 +1,13 @@
-
+import sys
+import os
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app
 from app.auth import create_access_token, verify_token
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 client = TestClient(app)
 
